@@ -1,41 +1,72 @@
-import { Brand } from "@/types/brand";
-import Image from "next/image";
-import brandsData from "./brandsData";
-
-const Brands = () => {
+"use client";
+import React from "react";
+import Link from "next/link";
+export default function Brands() {
   return (
-    <section className="pt-16">
-      <div className="container">
-        <div className="-mx-4 flex flex-wrap">
-          <div className="w-full px-4">
-            <div className="flex flex-wrap items-center justify-center rounded-xs bg-gray-light px-8 py-8 dark:bg-gray-dark sm:px-10 md:px-[50px] md:py-[40px] xl:p-[50px] 2xl:px-[70px] 2xl:py-[60px]">
-              {brandsData.map((brand) => (
-                <SingleBrand key={brand.id} brand={brand} />
-              ))}
-            </div>
+    <section className=" bg-white p-[32px] text-black space-y-[64px]">
+      <div className="grid grid-cols-12">
+        <div className="col-span-8 space-y-[15px]">
+          <h2 className="text-[12px] font-bold text-[#9CA3AF]">-WHAT WE DO</h2>
+          <h1 className="font-bold text-[36px] text-[#111827]">
+            Chúng tôi không chỉ tạo ra website <br />
+            sáng tạo, mà còn xây dựng những câu <br /> chuyện trải nghiệm
+          </h1>
+        </div>
+        <div className="col-span-4 flex flex-col items-start space-y-[32px] pl-[40px]">
+          <p className="text-[18px] text-[#6B7280] leading-relaxed">
+            Mỗi thương hiệu chúng tôi chạm vào đều là một <br />
+            câu chuyện cần được kể một cách cảm xúc.
+          </p>
+
+          <Link href="/">
+            <button className="bg-black text-white px-[35px] py-[18px] rounded-full font-bold flex items-center group transition-all hover:bg-gray-800">
+              Khám phá ngay
+              <span className="ml-3 transition-transform group-hover:translate-x-1">→</span>
+            </button>
+          </Link>
+        </div>
+      </div>
+      <div className="grid grid-cols-12">
+        <div className="col-span-4 space-y-[16px]">
+         <div className="flex justify-center">
+            <Link href="/">
+              <img className="w-[384px] h-[288px] rounded-[16px]" src="/images/brands/demo2.png" alt="" />
+            </Link>
+         </div>
+          <div>
+            <Link href="/">
+            <p className="text-[#111827] font-bold text-[18px]">Website-Bánh Flan Chu Ken</p>
+            <p className="text-[#6B7280] font-semibold">thơm ngon,mềm min,hương vị tuyệt vời</p>
+            </Link>
+          </div>
+        </div>
+        <div className="col-span-4 space-y-[16px]">
+         <div className="flex justify-center">
+            <Link href="/">
+              <img className="w-[384px] h-[288px] rounded-[16px]" src="/images/brands/demo3.png" alt="" />
+            </Link>
+         </div>
+          <div>
+            <Link href="/">
+            <p className="text-[#111827] font-bold text-[18px]">Website-Bánh Flan Chu Ken</p>
+            <p className="text-[#6B7280] font-semibold">thơm ngon,mềm min,hương vị tuyệt vời</p>
+            </Link>
+          </div>
+        </div>
+        <div className="col-span-4 space-y-[16px]">
+         <div className="flex justify-center">
+            <Link href="/">
+              <img className="w-[384px] h-[288px] rounded-[16px]" src="/images/brands/demo4.png" alt="" />
+            </Link>
+         </div>
+          <div>
+            <Link href="/">
+            <p className="text-[#111827] font-bold text-[18px]">Website-Bánh Flan Chu Ken</p>
+            <p className="text-[#6B7280] font-semibold">thơm ngon,mềm min,hương vị tuyệt vời</p>
+            </Link>
           </div>
         </div>
       </div>
     </section>
   );
-};
-
-export default Brands;
-
-const SingleBrand = ({ brand }: { brand: Brand }) => {
-  const { href, image, imageLight, name } = brand;
-
-  return (
-    <div className="flex w-1/2 items-center justify-center px-3 py-[15px] sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6">
-      <a
-        href={href}
-        target="_blank"
-        rel="nofollow noreferrer"
-        className="relative h-10 w-full opacity-70 transition hover:opacity-100 dark:opacity-60 dark:hover:opacity-100"
-      >
-        <Image src={imageLight} alt={name} fill className="hidden dark:block" />
-        <Image src={image} alt={name} fill className="block dark:hidden" />
-      </a>
-    </div>
-  );
-};
+}

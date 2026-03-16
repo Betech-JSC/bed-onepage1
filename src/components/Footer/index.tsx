@@ -5,8 +5,6 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <section className="bg-black text-white min-h-screen flex flex-col items-center justify-center px-4 py-20">
-
-      {/* 1. logo và tên page */}
       <div className="flex items-center gap-2 mb-10">
         <div className="bg-[#FF5C00] rounded-xl p-2 w-10 h-10 flex items-center justify-center">
           <Image
@@ -36,17 +34,9 @@ const Footer = () => {
           <Link href="/" className="hover:text-white transition">1Page</Link>
           <Link href="/pricing" className="hover:text-white transition">Bảng giá</Link>
           <Link href="/contact" className="hover:text-white transition">Liên hệ</Link>
-          <Link href="/privacy" className="hover:text-white transition">Chính sách bảo mật</Link>
-          <Link href="/terms" className="hover:text-white transition">Điều khoản dịch vụ</Link>
+          <Link href="/" className="hover:text-white transition">Chính sách bảo mật</Link>
+          <Link href="/" className="hover:text-white transition">Điều khoản dịch vụ</Link>
         </div>
-        {/* <div className="flex justify-center gap-4 mb-8">
-          <div className="w-10 h-10 opacity-60 hover:opacity-100 transition">
-            <Image src="/images/partners/partner1.png" alt="icon1" width={40} height={40} className="rounded" />
-          </div>
-          <div className="w-10 h-10 opacity-60 hover:opacity-100 transition">
-            <Image src="/images/partners/partner2.png" alt="icon2" width={40} height={40} className="rounded" />
-          </div>
-        </div> */}
         <p className="text-center text-gray-600 text-xs">
           © Copyright by 1Page AI in 2026. All Rights Reserved.
         </p>

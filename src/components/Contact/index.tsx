@@ -1,86 +1,36 @@
-import NewsLatterBox from "./NewsLatterBox";
+"use client";
+import React from 'react'
 
-const Contact = () => {
+import ContactBox from './contactbox';
+
+export default function Contact() {
   return (
-    <section id="contact" className="overflow-hidden py-16 md:py-20 lg:py-28">
-      <div className="container">
-        <div className="-mx-4 flex flex-wrap">
-          <div className="w-full px-4 lg:w-7/12 xl:w-8/12">
-            <div
-              className="mb-12 rounded-xs bg-white px-8 py-11 shadow-three dark:bg-gray-dark sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px]"
-              data-wow-delay=".15s
-              "
-            >
-              <h2 className="mb-3 text-2xl font-bold text-black dark:text-white sm:text-3xl lg:text-2xl xl:text-3xl">
-                Need Help? Open a Ticket
-              </h2>
-              <p className="mb-12 text-base font-medium text-body-color">
-                Our support team will get back to you ASAP via email.
-              </p>
-              <form>
-                <div className="-mx-4 flex flex-wrap">
-                  <div className="w-full px-4 md:w-1/2">
-                    <div className="mb-8">
-                      <label
-                        htmlFor="name"
-                        className="mb-3 block text-sm font-medium text-dark dark:text-white"
-                      >
-                        Your Name
-                      </label>
-                      <input
-                        type="text"
-                        placeholder="Enter your name"
-                        className="border-stroke w-full rounded-xs border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-hidden focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
-                      />
-                    </div>
-                  </div>
-                  <div className="w-full px-4 md:w-1/2">
-                    <div className="mb-8">
-                      <label
-                        htmlFor="email"
-                        className="mb-3 block text-sm font-medium text-dark dark:text-white"
-                      >
-                        Your Email
-                      </label>
-                      <input
-                        type="email"
-                        placeholder="Enter your email"
-                        className="border-stroke w-full rounded-xs border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-hidden focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
-                      />
-                    </div>
-                  </div>
-                  <div className="w-full px-4">
-                    <div className="mb-8">
-                      <label
-                        htmlFor="message"
-                        className="mb-3 block text-sm font-medium text-dark dark:text-white"
-                      >
-                        Your Message
-                      </label>
-                      <textarea
-                        name="message"
-                        rows={5}
-                        placeholder="Enter your Message"
-                        className="border-stroke w-full resize-none rounded-xs border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-hidden focus:border-primary dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two dark:focus:border-primary dark:focus:shadow-none"
-                      ></textarea>
-                    </div>
-                  </div>
-                  <div className="w-full px-4">
-                    <button className="rounded-xs bg-primary px-9 py-4 text-base font-medium text-white shadow-submit duration-300 hover:bg-primary/90 dark:shadow-submit-dark">
-                      Submit Ticket
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
+    <section className='p-[50px] grid grid-cols-12 bg-white text-black'>
+      <div className='col-span-6 space-y-[24px]'>
+       <div className='space-y-[24px]'>
+          <h1 className='text-[#111827] font-bold text-[36px]'>Liên hệ với chúng tôi</h1>
+          <p className='text-[#6B7280] text-[16px] font-semibold'>Dù bạn cần bất cứ điều gì, đội ngũ của chúng tôi luôn sẵn sàng hỗ trợ bạn từng <br /> bước trên hành trình tạo dựng website bán hàng của riêng mình.</p>
+        </div>
+        <div className='flex space-x-[30px]'>
+          <div className='space-y-[14px]'>
+            <img src="/images/contact/mess.svg" alt="" />
+            <p className='font-bold text-[16px]'>Nhắn Cho Chúng Tôi</p>
+            <p className='text-[#6B7280]'>Trò chuyện trực tiếp qua Chat để được <br /> gửi hỗ trợ</p>
+            <p className='text-[14px] font-bold text-[#E75B1B]'>lienhe@1page.ai.vn</p>
           </div>
-          <div className="w-full px-4 lg:w-5/12 xl:w-4/12">
-            <NewsLatterBox />
+          <div className='space-y-[14px]'>
+            <img src="/images/contact/hotline.svg" alt="" />
+            <p className='font-bold text-[16px]'>Gọi Hotline</p>
+            <p className='text-[#6B7280]'>Không gì tuyệt vời hơn khi liên hệ trực tiếp <br /> dể tư vấn</p>
+            <p className='text-[14px] font-bold text-[#E75B1B]'>0775600351</p>
           </div>
         </div>
-      </div>
-    </section>
-  );
-};
 
-export default Contact;
+       </div>
+      <div className='col-span-6'>
+              <ContactBox />
+      </div>
+      
+    </section>
+  )
+}

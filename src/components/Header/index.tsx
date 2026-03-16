@@ -23,8 +23,8 @@ const Header = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", handleStickyNavbar);
-    return () => window.removeEventListener("scroll", handleStickyNavbar); // Clean up để tránh lỗi bộ nhớ
-  }, []); // Thêm mảng rỗng ở đây
+    return () => window.removeEventListener("scroll", handleStickyNavbar);
+  }, []);
 
   const handleSubmenu = (index) => {
     setOpenIndex(openIndex === index ? -1 : index);
@@ -34,8 +34,7 @@ const Header = () => {
     <>
       <header className={`grid grid-cols-12 py-[16px] px-[32px] transition-all ${sticky ? "fixed top-0 z-50 w-full bg-white shadow-md" : "bg-white"}`}>
         <div className="col-span-2 flex space-x-[10px] items-center">
-          {/* Đổi /Home thành / nếu là trang chủ */}
-          <Link href="/Home" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center space-x-2">
             <Image
               src="/images/logo/logo.svg"
               alt="Logo"
@@ -54,7 +53,6 @@ const Header = () => {
         </div>
 
         <div className="col-span-2 flex justify-end items-center space-x-[10px]">
-          {/* Sửa mã màu và dấu ngoặc kép ở đây */}
          <div>
             <Link href="/signin" className="text-white hover:text-[#FFA500] font-bold bg-black rounded-full p-[20px]">
               Đăng Nhập
