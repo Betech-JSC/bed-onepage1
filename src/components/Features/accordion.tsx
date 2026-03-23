@@ -32,36 +32,59 @@ export default function Accordion() {
   };
 
   return (
-    <div className="max-w-xl mx-auto space-y-4">
+    <div className="w-full max-w-2xl mx-auto space-y-4">
       {data.map((item) => (
         <div
           key={item.id}
-          className={`border rounded-xl p-4 transition ${
-            active === item.id ? "bg-orange-50 border-orange-300" : "bg-white"
+          className={`border transition-all duration-300 rounded-[24px] overflow-hidden ${
+            active === item.id 
+              ? "bg-[#FFF7ED] border-[#FFD8B1] shadow-sm" 
+              : "bg-white border-gray-100 hover:border-gray-200 shadow-sm"
           }`}
         >
           <button
             onClick={() => toggle(item.id)}
-            className="flex justify-between items-center w-full text-left font-semibold"
+            className="flex justify-between items-center w-full text-left p-5 md:p-6 transition-colors"
           >
-            {item.title}
-
-            <span className="text-xl">
-              {active === item.id ? "-" : "+"}
+            <span className={`text-lg font-bold pr-4 ${
+              active === item.id ? "text-[#E75B1B]" : "text-[#111827]"
+            }`}>
+              {item.title}
             </span>
+
+            <div className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all ${
+              active === item.id ? "bg-[#E75B1B] text-white rotate-180" : "bg-gray-100 text-gray-500"
+            }`}>
+              {active === item.id ? (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-4 h-4">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12h-15" />
+                </svg>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-4 h-4">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                </svg>
+              )}
+            </div>
           </button>
 
-          {active === item.id && (
-            <div className="mt-3 text-gray-600">
-              <p>{item.content}</p>
+          <div 
+            className={`transition-all duration-300 ease-in-out overflow-hidden ${
+              active === item.id ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+            }`}
+          >
+            <div className="px-5 md:px-6 pb-6 pt-0">
+              <div className="h-[1px] bg-orange-200 mb-4 opacity-50"></div>
+              <p className="text-[#4B5563] text-base md:text-lg leading-relaxed">
+                {item.content}
+              </p>
 
               {item.highlight && (
-                <p className="mt-2 text-orange-500 font-semibold">
+                <p className="mt-4 text-[#E75B1B] font-bold flex items-center bg-white py-2 px-4 rounded-lg border border-orange-100 w-fit">
                   {item.highlight}
                 </p>
               )}
             </div>
-          )}
+          </div>
         </div>
       ))}
     </div>

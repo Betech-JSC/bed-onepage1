@@ -21,7 +21,6 @@ const OfferList = ({
 }) => {
   return (
     <div className="flex items-start mb-4 group">
-      {/* Icon Container */}
       <div className={`mt-1 flex-shrink-0 flex h-5 w-5 items-center justify-center rounded-full transition-colors ${
         status === "active" 
           ? "bg-orange-100 text-[#E75B1B]" 
@@ -31,12 +30,10 @@ const OfferList = ({
           {status === "active" ? checkIcon : crossIcon}
         </span>
       </div>
-
-      {/* Text */}
-      <p className={`ml-3 text-base font-medium transition-colors ${
+      <p className={`ml-3 text-[15px] font-medium transition-colors leading-snug ${
         status === "active" 
           ? "text-gray-700 group-hover:text-black" 
-          : "text-gray-400 line-through decoration-gray-300"
+          : "text-gray-400 line-through decoration-gray-200"
       }`}>
         {text}
       </p>

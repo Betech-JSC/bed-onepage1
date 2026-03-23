@@ -1,8 +1,11 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-
+import { usePathname } from "next/navigation";
 const Footer = () => {
+const pathName = usePathname();
+if (pathName === "/templates") return null;
+if (pathName === "/dashboard") return null;
   return (
     <section className="bg-black text-white min-h-screen flex flex-col items-center justify-center px-4 py-20">
       <div className="flex items-center gap-2 mb-10">

@@ -1,9 +1,11 @@
-import Pricing from "@/components/Pricing";
+import PricingDetails from "@/components/PricingDetails";
+import Header from "./header";
 
 export default function PricingPage() {
   return (
     <main>
-      <Pricing />
+      <Header />
+      <PricingDetails />
     </main>
   );
 }
